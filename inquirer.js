@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
 
-const preguntas = [
+const typeofmember = [
     {
         type: 'list',
-        name: 'opcion',
+        name: 'memberSelected',
         message: 'Type of team member:',
         choices: [
             {
@@ -12,10 +12,10 @@ const preguntas = [
             },
             {
                 value: '2',
-                name: 'Internal'
+                name: 'Intern'
             },
             {
-                value: '0',
+                value: '3',
                 name: 'Finish'
             },
             
@@ -47,51 +47,12 @@ const engineer = [
 
 const inquirerMenu = async() => {
 
-    // console.clear();
-    // console.log('=========================='.green);
-    // console.log('  Seleccione una opción'.white );
-    // console.log('==========================\n'.green);
+    const { memberSelected } = await inquirer.prompt(typeofmember);
 
-    const { opcion } = await inquirer.prompt(preguntas);
-
-    return opcion;
+    return memberSelected;
 }
 
-const pausa = async() => {
-    
-    const question = [
-        {
-            type: 'input',
-            name: 'enter',
-            message: `Presione enter para continuar`
-        }
-    ];
-
-    console.log('\n');
-    await inquirer.prompt(question);
-}
-
-const leerInput = async( message ) => {
-
-    const question = [
-        {
-            type: 'input',
-            name: 'desc',
-            message,
-            validate( value ) {
-                if( value.length === 0 ) {
-                    return 'Por favor ingrese un valor';
-                }
-                return true;
-            }
-        }
-    ];
-
-    const { desc } = await inquirer.prompt(question);
-    return desc;
-}
-
-const leerManager = async() => {
+const inputManager = async() => {
 
     const manager = [    
         {
@@ -116,19 +77,17 @@ const leerManager = async() => {
           }
     ];
 
-    const { desc } = await inquirer.prompt(manager);
-    return desc;
+    const managerData = await inquirer.prompt(manager);
+    return managerData;
 }
 
-const leerEngineer = async() => {
+const inputEngineer = async() => {
     const engineerData = await inquirer.prompt(engineer);
     return engineerData;
 }
 
 module.exports = {
     inquirerMenu,
-    pausa,
-    leerInput,
-    leerManager,
-    leerEngineer
+    inputManager,
+    inputEngineer
 }
