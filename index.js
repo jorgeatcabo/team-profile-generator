@@ -11,6 +11,8 @@ const Employee=require("./lib/Employee");
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const Manager = require('./lib/Manager.js');
+const writeToHTMLFile=require('./src/writeToHTMLFile')
+
 
 var arrManager=[]
 var arrEngineer=[]
@@ -48,8 +50,7 @@ const main = async() => {
     } while( opt !== '3' );
     var arrManagerCard=[]
     createManagerCard(arrManager,arrManagerCard)
-    generateHTML(arrManagerCard)
-    console.log(generateHTML(arrManagerCard))
+    writeToHTMLFile('index.html',arrManagerCard)
 
 }
 
