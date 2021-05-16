@@ -1,46 +1,42 @@
 const generateHTML=require('./generateHTML.js')
 const fs = require('fs');
 const inquirer = require('inquirer');
+const { inquirerMenu, 
+        pausa,
+        leerManager,
+        leerEngineer
+} = require('./inquirer');
 
-const questions = [    
-    {
-      type: 'input',
-      message: 'Manager\'s name:',
-      name: 'managername',
-    },
-    {
-      type: 'input',
-      message: 'Manager\'s ID:',
-      name: 'managerid',
-    },
-    {
-      type: 'input',
-      message: 'Manager\'s email address:',
-      name: 'manageremailaddress',
-    },
-    {
-      type: 'input',
-      message: 'Manager\'s office:',
-      name: 'manageroffice',
-    }
-];
+const Employee=require("./lib/Employee")
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) { 
-  fs.writeFile(fileName, data, (err) =>
-  err ? console.log(err) : console.log('Successfully created HTML File!')
-);
+
+const main = async() => {
+    manager = await leerManager();
+    let opt = '';
+    
+    do {
+        // Imprimir el menú
+        opt = await inquirerMenu();
+        switch (opt) {
+            case '1':
+                const engineerData = await leerEngineer();
+            break;
+
+            case '2':
+            break;
+        
+        }
+
+
+
+        await pausa();
+
+    } while( opt !== '0' );
+
+
+
 }
 
-// TODO: Create a function to initialize app
-function init() {
-  inquirer
-  .prompt(questions)
-  .then((answers) => {
-    const HTMLContent = generateHTML.generateHTML(answers);
-    writeToFile('team-profile.html', HTMLContent)
-  });
-}
 
-// Function call to initialize app
-init();
+main();
+
