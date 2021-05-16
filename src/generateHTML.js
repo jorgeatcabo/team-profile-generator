@@ -1,6 +1,6 @@
 
 // TODO: Create a function to generate teaam profile HTML file
-function generateHTML(answers) {
+function generateHTML(arrCards) {
 return   `<!DOCTYPE html>
 <html lang="en">
     <head>
@@ -25,16 +25,7 @@ return   `<!DOCTYPE html>
 
         <div class="col-12 col-lg-2">
 
-          <div class="card">
-            <h5 class="card-header bg-info day-1-header">Type</h5>
-            <div class="card-body">
-              <div class="card-text">
-                <p class="day-1-temp">Temp: 23.96° C</p>
-                <p class="day-1-wind">Wind: 3.14 MPH</p>
-                <p class="day-1-humidity">Humidity: 88 %</p>
-              </div>                                
-            </div>
-          </div>
+        ${arrCards}
 
         </div>
 
@@ -49,4 +40,4 @@ return   `<!DOCTYPE html>
 ;
 }
 
-exports.generateHTML = generateHTML;
+module.exports = generateHTML;
