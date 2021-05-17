@@ -60,11 +60,13 @@ const main = async() => {
     var arrManagerCard=[]
     var arrEngineerCard=[]
     var arrInternCard=[]
+    //var arrCards=[]
     createManagerCard(arrManager,arrManagerCard)
     createEngineerCard(arrEngineer,arrEngineerCard)
     createInternCard(arrIntern,arrInternCard)
-    console.log(arrInternCard)
-    writeToHTMLFile('index.html',arrManagerCard)
+    const arrCards=[...arrManagerCard,...arrEngineerCard,...arrInternCard]
+    console.log(arrCards)
+    writeToHTMLFile('index.html',arrCards)
 
 }
 
