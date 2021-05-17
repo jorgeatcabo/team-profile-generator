@@ -1,6 +1,7 @@
 function createEngineerCard(arrEngineer,arrEngineerCard){
   arrEngineer.map(item=>{
         arrEngineerCard.push(`
+        <div class="col-12 col-lg-2">
         <div class="card">
         <h5 class="card-header bg-info day-1-header">
         <p>${item.name}</p>
@@ -13,6 +14,7 @@ function createEngineerCard(arrEngineer,arrEngineerCard){
             <p>${item.github}</p>
           </div>                                
         </div>
+      </div>
       </div>
         `)
         

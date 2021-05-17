@@ -1,6 +1,7 @@
 function createInternCard(arrIntern,arrInternCard){
   arrIntern.map(item=>{
         arrInternCard.push(`
+        <div class="col-12 col-lg-2">
         <div class="card">
         <h5 class="card-header bg-info day-1-header">
         <p>${item.name}</p>
@@ -13,6 +14,7 @@ function createInternCard(arrIntern,arrInternCard){
             <p>${item.school}</p>
           </div>                                
         </div>
+      </div>
       </div>
         `)
         

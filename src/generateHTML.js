@@ -23,11 +23,9 @@ return   `<!DOCTYPE html>
     </header>
     <div class="row justify-content-around no-gutters">
 
-        <div class="col-12 col-lg-2">
 
         ${arrCards}
 
-        </div>
 
         
       </div>

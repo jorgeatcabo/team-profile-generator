@@ -65,8 +65,9 @@ const main = async() => {
     createEngineerCard(arrEngineer,arrEngineerCard)
     createInternCard(arrIntern,arrInternCard)
     const arrCards=[...arrManagerCard,...arrEngineerCard,...arrInternCard]
-    console.log(arrCards)
-    writeToHTMLFile('index.html',arrCards)
+    // console.log(arrCards)
+    console.log(arrCards.join('\n'));
+    writeToHTMLFile('index.html',arrCards.join('\n'))
 
 }
 
