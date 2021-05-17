@@ -3,15 +3,15 @@ function createInternCard(arrIntern,arrInternCard){
         arrInternCard.push(`
         <div class="col-12 col-lg-2">
         <div class="card">
-        <h5 class="card-header bg-info day-1-header">
+        <h5 class="card-header bg-info">
         <p>${item.name}</p>
         <p>Intern</p>
         </h5>
         <div class="card-body">
           <div class="card-text">
-            <p>${item.id}</p>
-            <p><a href='mailto:${item.email}'>${item.email}</a></p>
-            <p>${item.school}</p>
+          <p>ID: ${item.id}</p>
+          <p>Email: <a href='mailto:${item.email}'>${item.email}</a></p>
+            <p>School: ${item.school}</p>
           </div>                                
         </div>
       </div>
