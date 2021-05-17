@@ -13,7 +13,7 @@ const createInternCard=require('./src/createInternCard')
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const Manager = require('./lib/Manager.js');
-const writeToHTMLFile=require('./src/writeToHTMLFile')
+const writeToHTMLFile=require('./src/writeToHTMLFile') 
 
 
 var arrManager=[]
@@ -70,7 +70,7 @@ const main = async() => {
     writeToHTMLFile('index.html',arrCards.join('\n'))
 
 }
-
+ 
 
 main();
 

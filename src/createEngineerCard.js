@@ -10,8 +10,8 @@ function createEngineerCard(arrEngineer,arrEngineerCard){
         <div class="card-body">
           <div class="card-text">
             <p>${item.id}</p>
-            <p>${item.email}</p>
-            <p>${item.github}</p>
+            <p><a href='mailto:${item.email}'>${item.email}</a></p>
+            <p><a href='https://github.com/${item.github}'>${item.github}</a></p> 
           </div>                                
         </div>
       </div>

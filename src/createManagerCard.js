@@ -10,7 +10,7 @@ function createManagerCard(arrManager,arrManagerCard){
         <div class="card-body">
           <div class="card-text">
             <p>${item.id}</p>
-            <p>${item.email}</p>
+            <p><a href='mailto:${item.email}'>${item.email}</a></p>
             <p>${item.officenumber}</p>
           </div>                                
         </div>
