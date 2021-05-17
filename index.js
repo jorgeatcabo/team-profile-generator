@@ -3,11 +3,13 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const { inquirerMenu, 
         inputManager,
-        inputEngineer
+        inputEngineer,
+        inputIntern
 } = require('./inquirer');
 const createManagerCard=require('./src/createManagerCard')
+const createEngineerCard=require('./src/createEngineerCard')
+const createInternCard=require('./src/createInternCard')
 
-const Employee=require("./lib/Employee");
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const Manager = require('./lib/Manager.js');
@@ -17,6 +19,7 @@ const writeToHTMLFile=require('./src/writeToHTMLFile')
 var arrManager=[]
 var arrEngineer=[]
 var arrIntern=[]
+
 const main = async() => {
     managerData = await inputManager();
 
@@ -42,6 +45,12 @@ const main = async() => {
             break;
 
             case '2':
+                const internData = await inputIntern();
+                let intern= new Intern(internData.internname,
+                    internData.internid,
+                    internData.internemailaddress,
+                    internData.internschool)
+                    arrIntern.push(intern)
             break;
         
         }
@@ -49,7 +58,12 @@ const main = async() => {
 
     } while( opt !== '3' );
     var arrManagerCard=[]
+    var arrEngineerCard=[]
+    var arrInternCard=[]
     createManagerCard(arrManager,arrManagerCard)
+    createEngineerCard(arrEngineer,arrEngineerCard)
+    createInternCard(arrIntern,arrInternCard)
+    console.log(arrInternCard)
     writeToHTMLFile('index.html',arrManagerCard)
 
 }

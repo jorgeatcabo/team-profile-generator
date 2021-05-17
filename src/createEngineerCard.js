@@ -1,16 +1,16 @@
-function createManagerCard(arrManager,arrManagerCard){
-  arrManager.map(item=>{
-        arrManagerCard.push(`
+function createEngineerCard(arrEngineer,arrEngineerCard){
+  arrEngineer.map(item=>{
+        arrEngineerCard.push(`
         <div class="card">
         <h5 class="card-header bg-info day-1-header">
         <p>${item.name}</p>
-        <p>Manager</p>
+        <p>Engineer</p>
         </h5>
         <div class="card-body">
           <div class="card-text">
             <p>${item.id}</p>
             <p>${item.email}</p>
-            <p>${item.officenumber}</p>
+            <p>${item.github}</p>
           </div>                                
         </div>
       </div>
@@ -19,4 +19,4 @@ function createManagerCard(arrManager,arrManagerCard){
     })
 }
 
-module.exports=createManagerCard
+module.exports=createEngineerCard

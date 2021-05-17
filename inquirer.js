@@ -45,6 +45,29 @@ const engineer = [
       },
 ]
 
+const intern = [    
+  {
+      type: 'input',
+      message: 'Intern\'s name:',
+      name: 'internname',
+    },
+    {
+      type: 'input',
+      message: 'Intern\'s ID:',
+      name: 'internid',
+    },
+    {
+      type: 'input',
+      message: 'Intern\'s email address:',
+      name: 'internemailaddress',
+    },
+    {
+      type: 'input',
+      message: 'Intern\'s School:',
+      name: 'internschool',
+    },
+]
+
 const inquirerMenu = async() => {
 
     const { memberSelected } = await inquirer.prompt(typeofmember);
@@ -86,8 +109,14 @@ const inputEngineer = async() => {
     return engineerData;
 }
 
+const inputIntern = async() => {
+  const internData = await inquirer.prompt(intern);
+  return internData;
+}
+
 module.exports = {
     inquirerMenu,
     inputManager,
-    inputEngineer
+    inputEngineer,
+    inputIntern
 }
