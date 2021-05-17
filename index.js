@@ -5,7 +5,7 @@ const { inquirerMenu,
         inputManager,
         inputEngineer,
         inputIntern
-} = require('./inquirer');
+} = require('./src/inquirer');
 const createManagerCard=require('./src/createManagerCard')
 const createEngineerCard=require('./src/createEngineerCard')
 const createInternCard=require('./src/createInternCard')
