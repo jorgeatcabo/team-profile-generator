@@ -11,7 +11,7 @@ function createEngineerCard(arrEngineer,arrEngineerCard){
           <div class="card-text">
           <p>ID: ${item.id}</p>
           <p>Email: <a href='mailto:${item.email}'>${item.email}</a></p>
-          <p>GitHub: <a href='https://github.com/${item.github}'>${item.github}</a></p> 
+          <p>GitHub: <a href='https://github.com/${item.github}' target='_blank'>${item.github}</a></p> 
           </div>                                
         </div>
       </div>
